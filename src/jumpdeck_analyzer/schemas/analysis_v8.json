@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AnalysisV8",
+  "description": "Analysis output schema v8",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": true
+}
