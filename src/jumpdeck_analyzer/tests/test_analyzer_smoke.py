@@ -9,7 +9,6 @@ import jumpdeck_analyzer.analyzer as analyzer
 def test_build_real_analysis_smoke(monkeypatch, tmp_path):
     # --- Fake audio + SR ---
     y = np.zeros(22050 * 8, dtype=np.float32)  # 8 seconds (more room)
-    sr = 22050
 
     # librosa.load
     monkeypatch.setattr(analyzer.librosa, "load", lambda path, sr=22050, mono=True: (y, sr))

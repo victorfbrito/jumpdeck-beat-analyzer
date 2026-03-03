@@ -1,7 +1,4 @@
 import json
-from pathlib import Path
-
-import pytest
 
 from jumpdeck_analyzer import cli
 
