@@ -27,11 +27,28 @@ The output JSON matches the schema used by JumpDeck's frontend
 ## Requirements
 
 -   Python 3.9+
--   FFmpeg (recommended/required for MP3 support depending on your
-    platform)
--   libsndfile (recommended; helps audio decoding backends)
+-   For MP3 support: FFmpeg installed (librosa requires a working audio
+    backend)
 
-### Install system deps
+------------------------------------------------------------------------
+
+## Install (from source)
+
+``` bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -U pip
+pip install -e .
+```
+
+If you encounter audio backend errors (e.g., `NoBackendError`), install
+optional audio dependencies:
+
+``` bash
+pip install -e ".[audio]"
+```
+
+You may also need system libraries:
 
 **macOS (Homebrew)**
 
@@ -46,34 +63,11 @@ sudo apt-get update
 sudo apt-get install -y ffmpeg libsndfile1
 ```
 
-**Windows** - Install FFmpeg and ensure `ffmpeg` is on PATH. - If you
-have audio decoding issues, try installing a libsndfile package for your
-environment.
-
-------------------------------------------------------------------------
-
-## Install
-
-### From source (recommended during development)
-
-``` bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -U pip
-pip install -e .
-```
-
-### With dev tools
-
-``` bash
-pip install -e ".[dev]"
-```
-
 ------------------------------------------------------------------------
 
 ## Usage
 
-Basic:
+Generate an analysis JSON:
 
 ``` bash
 jumpdeck-analyzer path/to/song.mp3 -o analysis.json
@@ -86,13 +80,6 @@ jumpdeck-analyzer path/to/song.mp3 --job-id mytrack -o analysis.json
 ```
 
 If no `--job-id` is provided, one is derived from the filename.
-
-If you encounter audio decoding errors, install the optional audio backends.
-
-``` bash
-pip install -e ".[audio]"
-```
-
 
 ------------------------------------------------------------------------
 
