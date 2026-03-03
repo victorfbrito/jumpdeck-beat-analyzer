@@ -10,6 +10,8 @@ __pycache__/
 .eggs/
 dist/
 build/
+.coverage
+htmlcov/
 
 # Generated output
 analysis.json

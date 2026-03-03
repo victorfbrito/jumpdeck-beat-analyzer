@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff"]
+dev = ["pytest", "ruff", "pytest-cov"]
 validate = ["jsonschema>=4.0"]
 audio = [
   "soundfile>=0.12",
