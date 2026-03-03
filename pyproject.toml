@@ -17,6 +17,10 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest", "ruff"]
 validate = ["jsonschema>=4.0"]
+audio = [
+  "soundfile>=0.12",
+  "audioread>=3.0"
+]
 
 [project.scripts]
 jumpdeck-analyzer = "jumpdeck_analyzer.cli:main"
